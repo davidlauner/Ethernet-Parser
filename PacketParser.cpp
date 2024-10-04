@@ -93,7 +93,7 @@ SC_MODULE(PacketParser) {
               	case DATA: // Parse DATA
                     parsed_type.write(DATA);
                     //////////////////////////////////////////
-                    // movinf payload data to next block in pipe
+                    // moving payload data to next block in pipe
                     //////////////////////////////////////////
                     parse_header();
                     reset_parser(); //if currently finish read DATA so rst to next ethernet packet
@@ -154,6 +154,9 @@ SC_MODULE(PacketParser) {
         } else {
             current_header_type = packet_in.read(); // Last byte is the next header
             header_bytes_parsed = 0; //rst header bytes cntr for next header type
+            if(state == DATA) { //in case last byte in DATA so rst the pckt parser
+                reset_parser();
+            }
             parse_next_header();
         }
     }
