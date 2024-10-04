@@ -1,3 +1,6 @@
+// Author: Launer David
+// Date: Oct 2024
+
 #include <systemc.h>
 
 // Enum for header types
