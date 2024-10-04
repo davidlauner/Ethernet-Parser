@@ -1,6 +1,7 @@
 # Ethernet-Parser
 This is a readme file for Ethernet packet parser file PackateParser.cpp
 that was written in system c
+the code is passing compilation
 
 For simplicity and the assumption its not intended for performace modeling
 I assumed the followings:
